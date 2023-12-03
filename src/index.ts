@@ -5,6 +5,8 @@ import dotenv from "dotenv"; //importou o dotenv
 
 dotenv.config() //configuração simples do dotenv
 
+import './connection'
+
 const PORT = process.env.PORT || 8080 //peguei a port do arquivo .env
 
 const app = express() //pego o expess
