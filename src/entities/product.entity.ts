@@ -1,4 +1,6 @@
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm"
+import { v4 as UUID } from 'uuid';
+UUID
 
 @Entity('products')
 export class Product {
@@ -19,4 +21,10 @@ export class Product {
     type: 'timestamp',
   })
   createdAt: Date;
+
+  constructor(){
+    if (!this.id) {
+      this.id = UUID()
+    }
+  }
 }
